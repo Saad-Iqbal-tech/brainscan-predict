@@ -1,73 +1,150 @@
-# Welcome to your Lovable project
+This web application allows users to:
 
-## Project info
+Sign up and log in using email & password
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+Upload a brain MRI image
 
-## How can I edit this code?
+Run inference using a deployed FastAPI + TensorFlow backend
 
-There are several ways of editing your application.
+View prediction results (Tumor / No Tumor with confidence)
 
-**Use Lovable**
+Access a dashboard with future features marked as “Soon to be implemented”
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+How to Edit This Project
 
-Changes made via Lovable will be committed automatically to this repo.
+There are multiple ways to edit and maintain this application.
 
-**Use your preferred IDE**
+Option 1: Edit Using the Online Editor
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+Open the project in the browser-based editor
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+Modify components, pages, and styles
 
-Follow these steps:
+All changes are automatically saved to the repository
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+Option 2: Work Locally Using Your IDE
+Prerequisites
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+Node.js (v18+ recommended)
 
-# Step 3: Install the necessary dependencies.
-npm i
+npm
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+Option 3: Edit Directly on GitHub
 
-**Edit a file directly in GitHub**
+Open any file in the repository
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+Click the ✏️ Edit button
 
-**Use GitHub Codespaces**
+Commit changes directly to the main branch
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+Option 4: Use GitHub Codespaces
 
-## What technologies are used for this project?
+Go to the repository
 
-This project is built with:
+Click Code → Codespaces → New Codespace
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+Edit, commit, and push changes from the browser-based VS Code environment
 
-## How can I deploy this project?
+Tech Stack
+Frontend
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+React
 
-## Can I connect a custom domain to my Lovable project?
+TypeScript
 
-Yes, you can!
+Vite
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+Tailwind CSS
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+shadcn/ui
+
+Firebase Authentication (Email & Password)
+
+Backend
+
+FastAPI
+
+TensorFlow / Keras
+
+OpenCV
+
+Deployed on Railway
+
+Authentication Flow
+
+Users sign up and log in using Firebase Email & Password Authentication
+
+Firebase handles:
+
+User creation
+
+Login
+
+Session management
+
+The frontend retrieves the Firebase ID token after login
+
+The token is sent in the Authorization header when calling backend APIs
+
+Example:
+
+Authorization: Bearer <FIREBASE_ID_TOKEN>
+
+Prediction Flow
+
+User logs in
+
+User navigates to Dashboard
+
+User uploads an MRI image
+
+Frontend sends image to:
+
+POST /predict
+
+
+Backend:
+
+Preprocesses the image
+
+Runs inference using the trained model
+
+Returns:
+
+Predicted class
+
+Confidence score
+
+Dashboard
+
+The dashboard contains:
+
+Predict Card
+
+Upload image
+
+View result
+
+History Card
+
+Displays: “Soon to be implemented”
+
+No database storage is currently used for history
+
+Deployment
+
+The frontend can be deployed on any static hosting platform (e.g. Vercel, Netlify)
+
+The backend is already live on Railway
+
+No environment variables are required on the frontend other than Firebase config
+
+Notes
+
+No user profile data is stored in the backend
+
+No reports are persisted
+
+The system is intentionally minimal for stability
+
+
