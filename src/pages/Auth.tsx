@@ -70,29 +70,27 @@ const Auth = () => {
   return (
     <div className="min-h-screen flex">
       {/* Left Panel - Branding */}
-      <div className="hidden lg:flex lg:w-1/2 gradient-hero relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PHBhdGggZD0iTTM2IDM0djItSDI0di0yaDEyek0zNiAzMHYySDI0di0yaDEyek0zNiAyNnYySDI0di0yaDEyeiIvPjwvZz48L2c+PC9zdmc+')] opacity-30" />
-        
+      <div className="hidden lg:flex lg:w-1/2 bg-primary relative">
         <div className="relative z-10 flex flex-col justify-center items-center w-full p-12 text-center">
-          <div className="mb-8 p-6 rounded-full bg-primary-foreground/10 backdrop-blur-sm animate-pulse-glow">
-            <Brain className="h-20 w-20 text-primary-foreground" />
+          <div className="mb-6 p-5 rounded-2xl bg-primary-foreground/10">
+            <Brain className="h-16 w-16 text-primary-foreground" />
           </div>
           
-          <h1 className="text-5xl font-display font-bold text-primary-foreground mb-4">
+          <h1 className="text-4xl font-display font-bold text-primary-foreground mb-3">
             Neuro AI
           </h1>
-          <p className="text-xl text-primary-foreground/80 mb-8 max-w-md">
-            Advanced Brain Tumor Detection powered by Artificial Intelligence
+          <p className="text-lg text-primary-foreground/80 mb-8 max-w-md">
+            Brain Tumor Detection powered by AI
           </p>
           
-          <div className="grid grid-cols-2 gap-4 w-full max-w-sm">
-            <div className="bg-primary-foreground/10 backdrop-blur-sm rounded-xl p-4">
-              <p className="text-3xl font-bold text-primary-foreground">99%</p>
-              <p className="text-sm text-primary-foreground/70">Accuracy Rate</p>
+          <div className="grid grid-cols-2 gap-4 w-full max-w-xs">
+            <div className="bg-primary-foreground/10 rounded-lg p-4">
+              <p className="text-2xl font-bold text-primary-foreground">95%</p>
+              <p className="text-sm text-primary-foreground/70">Accuracy</p>
             </div>
-            <div className="bg-primary-foreground/10 backdrop-blur-sm rounded-xl p-4">
-              <p className="text-3xl font-bold text-primary-foreground">&lt;5s</p>
-              <p className="text-sm text-primary-foreground/70">Analysis Time</p>
+            <div className="bg-primary-foreground/10 rounded-lg p-4">
+              <p className="text-2xl font-bold text-primary-foreground">&lt;5s</p>
+              <p className="text-sm text-primary-foreground/70">Analysis</p>
             </div>
           </div>
         </div>
@@ -100,18 +98,18 @@ const Auth = () => {
 
       {/* Right Panel - Form */}
       <div className="w-full lg:w-1/2 flex items-center justify-center p-8 bg-background">
-        <div className="w-full max-w-md animate-fade-in">
+        <div className="w-full max-w-md">
           {/* Mobile Logo */}
           <div className="lg:hidden flex items-center justify-center gap-3 mb-8">
-            <div className="p-3 rounded-xl gradient-accent">
-              <Brain className="h-8 w-8 text-accent-foreground" />
+            <div className="p-3 rounded-xl bg-primary">
+              <Brain className="h-7 w-7 text-primary-foreground" />
             </div>
             <h1 className="text-2xl font-display font-bold text-foreground">
               Neuro AI
             </h1>
           </div>
 
-          <div className="medical-card p-8">
+          <div className="bg-card border border-border rounded-xl p-8 shadow-md">
             <div className="text-center mb-8">
               <h2 className="text-2xl font-display font-semibold text-foreground mb-2">
                 {isLogin ? "Welcome Back" : "Create Account"}
@@ -163,7 +161,7 @@ const Auth = () => {
 
               <Button
                 type="submit"
-                className="w-full h-12 text-base font-medium gradient-accent hover:opacity-90 transition-opacity"
+                className="w-full h-12 text-base font-medium"
                 disabled={loading}
               >
                 {loading ? (
